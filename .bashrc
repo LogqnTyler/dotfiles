@@ -1,3 +1,4 @@
+[[ -n ${BASH_VERSION:-} ]] || return 0 2> /dev/null || exit 0
 [[ $- != *i* ]] && return
 
 if [[ -f "$HOME/.config/bash/aliases" ]]; then
