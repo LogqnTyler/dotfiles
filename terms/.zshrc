@@ -9,3 +9,13 @@ fi
 if command -v starship &> /dev/null && [[ ${TERM:-} != "dumb" ]]; then
   eval "$(starship init zsh)"
 fi
+
+
+
+if [[ -d /opt/nvim-linux-x86_64/bin ]]; then
+  export PATH=/opt/nvim-linux-x86_64/bin:$PATH #add nvim
+fi
+
+if [[ -d /home/tpv/.opencode/bin ]]; then
+  export PATH=/home/tpv/.opencode/bin:$PATH
+fi
