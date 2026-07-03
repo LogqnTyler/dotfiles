@@ -1,0 +1,44 @@
+set meta-flag on
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Complete paths case-insensitively: `cd ~/wor` -> `cd ~/Work/`.
+set completion-ignore-case on
+set completion-prefix-display-length 2
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# Arrow keys match what you've typed so far against command history.
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char
+
+# Immediately add trailing slash when autocompleting symlinks to directories.
+set mark-symlinked-directories on
+
+# Do not autocomplete hidden files unless pattern explicitly begins with dot.
+set match-hidden-files off
+
+# Show all autocomplete results at once.
+set page-completions off
+
+# If more than 200 completions exist, ask before showing all.
+set completion-query-items 200
+
+# Show extra file information when completing, like `ls -F`.
+set visible-stats on
+
+# Be smarter when autocompleting text before cursor.
+set skip-completed-text on
+
+# Color Bash tab completions.
+set colored-stats on
+
+# Cycle forward/backward through completion candidates.
+TAB: menu-complete
+"\e[Z": menu-complete-backward
+
+# On first Tab, complete common prefix before cycling candidates.
+set menu-complete-display-prefix on
