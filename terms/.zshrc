@@ -14,6 +14,10 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
+if [[ -d "$HOME/google-cloud-sdk/bin" ]]; then
+  export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2>/dev/null)"

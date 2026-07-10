@@ -40,6 +40,7 @@ local function add_venv(venv)
 end
 
 add_venv(vim.env.VIRTUAL_ENV)
+add_venv(vim.env.CONDA_PREFIX)
 add_venv(project_venv)
 add_venv(nvim_python_venv)
 
@@ -48,9 +49,9 @@ for _, venv in ipairs(venvs) do
 
   if python then
     vim.g.python3_host_prog = python
-    vim.env.PATH = venv .. "/bin:" .. vim.env.PATH
 
     if venv == project_venv then
+      vim.env.PATH = venv .. "/bin:" .. vim.env.PATH
       vim.env.VIRTUAL_ENV = venv
       vim.g.uv_python_venv = venv
       vim.g.uv_kernel_name = vim.fn.fnamemodify(root, ":t")
